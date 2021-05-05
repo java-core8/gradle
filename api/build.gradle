@@ -1,0 +1,26 @@
+plugins {
+    id 'application'
+    id 'java'
+}
+
+group 'ru.tcreator'
+version '1.0-SNAPSHOT'
+
+application {
+    mainClass = 'ru.tcreator.Main'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation project(":db")
+    implementation project(":service")
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+}
+
+test {
+    useJUnitPlatform()
+}
